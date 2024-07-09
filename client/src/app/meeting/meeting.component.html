@@ -1,0 +1,19 @@
+<div class="meeting-container">
+  <div id="video-grid" class="video-grid"></div>
+  <div class="controls">
+    <button (click)="toggleMute()">
+      <i class="material-icons">{{ isMuted ? 'mic_off' : 'mic' }}</i>
+    </button>
+    <button (click)="toggleVideo()">
+      <i class="material-icons">{{ isVideoOff ? 'videocam_off' : 'videocam' }}</i>
+    </button>
+    <button (click)="endCall()">
+      <i class="material-icons">call_end</i>
+    </button>
+  </div>
+  <div class="chat">
+    <div id="chat_window" class="chat-window"></div>
+    <input id="chat_message" placeholder="Type a message...">
+    <button (click)="sendMessage()">Enter</button>
+  </div>
+</div>

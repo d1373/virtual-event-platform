@@ -1,0 +1,46 @@
+.meeting-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.video-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+input#chat_message {
+  width: calc(100% - 50px);
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}

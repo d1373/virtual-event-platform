@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="card" [class.flipped]="isFlipped" [class.shake]="shake">
+    <div class="front">
+      <form (submit)="onLogin($event, loginEmail.value, loginPassword.value)">
+        <div id="t1"><h2>Login</h2></div>
+        <table>
+        <tr>
+           <td>          <label for="login-email">Email:</label></td> 
+           <td>          <input type="email" id="login-email" #loginEmail required></td>
+        </tr>
+        <tr>
+            <td>          <label for="login-password">Password:</label></td>
+            <td>          <input type="password" id="login-password" #loginPassword required></td>
+        </tr>
+        </table>
+        <div></div>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a (click)="toggleFlip()">Sign Up</a></p>
+      </form>
+    </div>
+    <div class="back">
+      <form (submit)="onRegister($event, registerName.value, registerEmail.value, registerPassword.value)">
+        <div id="t2"><h2>Sign Up</h2></div>
+        <table>
+        <tr>
+          <td><label for="register-name">Name:</label></td>
+          <td><input type="text" id="register-name" #registerName required></td>
+        </tr>
+        <tr>
+          <td><label for="register-email">Email:</label></td>
+          <td><input type="email" id="register-email" #registerEmail required></td>
+        </tr>
+        <tr>
+          <td><label for="register-password">Password:</label></td>
+          <td><input type="password" id="register-password" #registerPassword required></td>
+        </tr>
+        </table>
+        <div></div>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a (click)="toggleFlip()">Login</a></p>
+      </form>
+    </div>
+  </div>
+  <div class="popup" [style.display]="errorMessage ? 'block' : 'none'">
+    <p>{{ errorMessage }}</p>
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>

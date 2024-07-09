@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="navbar-content">
+        <div class="app-name">Virtual Event Scheduler</div>
+    <div class="profile" (click)="toggleDropdown()">
+      <div class="profile-pic">{{ profileLetter }}</div>
+      <div class="dropdown-menu" *ngIf="showDropdown">
+        <button (click)="toggleTheme()">Toggle Dark Mode</button>
+        <button (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav>

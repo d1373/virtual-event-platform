@@ -1,0 +1,46 @@
+<div class="calendar-container">
+  <full-calendar [options]="calendarOptions"></full-calendar>
+  <button (click)="openCreatePopup()">Add Event</button>
+</div>
+
+<!-- Create Event Popup -->
+<div class="popup" *ngIf="showCreatePopup">
+  <div class="popup-content">
+    <h2>Create Event</h2>
+    <label for="eventTitle">Title:</label>
+    <input type="text" id="eventTitle" (input)="handleInputChange($event, 'newEventTitle')">
+    <label for="eventDate">Date:</label>
+    <input type="date" id="eventDate" (input)="handleInputChange($event, 'newEventDate')">
+    <label for="eventTime">Time:</label>
+    <input type="time" id="eventTime" (input)="handleInputChange($event, 'newEventTime')">
+    <label for="eventPeople">People:</label>
+    <input type="text" id="eventPeople" (input)="handleInputChange($event, 'newEventPeople')">
+    <label for="eventDescription">Description:</label>
+    <input type="text" id="eventDescription" (input)="handleInputChange($event, 'newEventDescription')">
+    <button (click)="createEvent()">Create</button>
+    <button (click)="closeCreatePopup()">Cancel</button>
+  </div>
+</div>
+
+<!-- View/Edit Event Popup -->
+<!-- View/Edit Event Popup -->
+<div class="popup" *ngIf="showViewPopup">
+  <div class="popup-content">
+    <h2>Event Details</h2>
+    <p><strong>Title:</strong> {{ currentEvent?.name }}</p>
+    <label for="eventDate">Date:</label>
+    <input type="date" id="eventDate" [value]="currentEvent?.date | date: 'yyyy-MM-dd'" (input)="handleCurrentEventInputChange($event, 'date')">
+    <label for="eventTime">Time:</label>
+    <input type="time" id="eventTime" [value]="currentEvent?.time" (input)="handleCurrentEventInputChange($event, 'time')">
+    <label for="eventPeople">People:</label>
+    <input type="text" id="eventPeople" [value]="currentEvent?.people" (input)="handleCurrentEventInputChange($event, 'people')">
+    <label for="eventDescription">Description:</label>
+    <input type="text" id="eventDescription" [value]="currentEvent?.description" (input)="handleCurrentEventInputChange($event, 'description')">
+    <button (click)="updateEvent()">Update</button>
+    <button (click)="deleteEvent()">Delete</button>
+    <button (click)="startMeeting()">Meet</button>
+    <button (click)="downloadEventChats()">Download Event Chats</button>
+    <button (click)="closeViewPopup()">Close</button>
+  </div>
+</div>
+

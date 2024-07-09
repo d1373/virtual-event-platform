@@ -1,0 +1,75 @@
+.calendar-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #76818d; /* Light mode color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover, button:focus {
+  background-color: #5a6b7a;
+}
+
+/* Dark mode button styles */
+body.dark-mode button {
+  background-color: #232e3a;
+  color: white;
+}
+
+body.dark-mode button:hover, body.dark-mode button:focus {
+  background-color: #1a242e;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2e4255;
+  border: 1px solid #ddd;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.popup-content label {
+  margin-bottom: 10px;
+}
+
+.popup-content input {
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.popup-content button {
+  margin-right: 10px;
+}
+
+.event-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+.popup.dark-mode {
+  background:black;
+}

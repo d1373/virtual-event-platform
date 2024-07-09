@@ -1,0 +1,51 @@
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #444;
+  border-color: #555;
+}
+
+body.dark-mode .dropdown-menu button {
+  color: #fff;
+}
+
+body.dark-mode .dropdown-menu button:hover, body.dark-mode .dropdown-menu button:focus {
+  background-color: #282828;
+}
+
+body:not(.dark-mode) .auth-container {
+  background-color: #fff;
+  color: #000;
+}
+/* Light mode button styles */
+button {
+  background-color: #76818d;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover, button:focus {
+  background-color: #5a6b7a;
+}
+
+/* Dark mode button styles */
+body.dark-mode button {
+  background-color: #232e3a;
+  color: white;
+}
+
+body.dark-mode button:hover, body.dark-mode button:focus {
+  background-color: #1a242e;
+}
